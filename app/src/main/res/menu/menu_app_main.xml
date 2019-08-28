@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.nestle.brs1portable.activities.AppMainActivity">
+
+    <group android:checkableBehavior="single" android:id="@+id/fragments">
+
+    </group>
+</menu>
