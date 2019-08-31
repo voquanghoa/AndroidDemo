@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CircleChart">
+        <attr name="progress" format="integer" />
+        <attr name="progressWidth" format="float" />
+        <attr name="progressColor" format="color" />
+        <attr name="backColor" format="color" />
+        <attr name="textSize" format="dimension" />
+        <attr name="textColor" format="color" />
+    </declare-styleable>
+</resources>

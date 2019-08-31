@@ -5,13 +5,17 @@ import android.view.MenuItem
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import com.quanghoa.appdemo.customui.CustomUiFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.menu_app_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
+    private val customUiFragment = CustomUiFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,17 +35,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         (nav_view as NavigationView).setNavigationItemSelectedListener(this)
+
+        showFragment(customUiFragment)
     }
 
-    private fun showFragment(fragment: Fragment, textId: Int) {
+    private fun showFragment(fragment: Fragment) {
         val fts = supportFragmentManager.beginTransaction()
         fts.replace(R.id.frameLayout, fragment)
         fts.commit()
-
-        title = getString(textId)
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
-        return false
+        when(p0.itemId){
+            R.id.circle_chart -> showFragment(customUiFragment)
+        }
+
+        drawer_layout.closeDrawer(GravityCompat.START)
+
+        return true
     }
 }

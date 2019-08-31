@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.nestle.brs1portable.activities.AppMainActivity">
 
-    <group android:checkableBehavior="single" android:id="@+id/fragments">
-
+    <group android:checkableBehavior="single" android:id="@+id/custom_ui">
+        <item android:id="@+id/circle_chart" android:title="@string/circle_chart" />
     </group>
 </menu>
