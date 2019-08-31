@@ -12,16 +12,11 @@ import com.quanghoa.appdemo.R
 import kotlin.math.min
 
 
-class CircleChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int, defStyleRes: Int)
-    : View(context, attrs, defStyleAttr, defStyleRes) {
-
-    constructor(context: Context): this(context, null, 0, 0)
-    constructor(context: Context, attrs: AttributeSet?): this(context, attrs, 0)
-    constructor(context: Context, attrs: AttributeSet?, defStyleAttr: Int): this(context, attrs, defStyleAttr, 0)
+class CircleChart(context: Context, attrs: AttributeSet?) : View(context, attrs) {
 
     var progress: Int = 40
-        set(value){
-            if(value != field && value in 0..100){
+        set(value) {
+            if (value != field && value in 0..100) {
                 field = value
                 invalidate()
             }
@@ -30,8 +25,9 @@ class CircleChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int, def
     private val paint = Paint(Paint.ANTI_ALIAS_FLAG)
     private val textPaint = Paint(Paint.ANTI_ALIAS_FLAG)
 
-    private var fullRect = RectF()
+    private var circleRect = RectF()
     private var textBound = Rect()
+
     private var strokeWidth = 20f
     private var textSize = 60f
 
@@ -47,12 +43,13 @@ class CircleChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int, def
             strokeWidth = typedArray.getFloat(R.styleable.CircleChart_progressWidth, strokeWidth)
             textSize = typedArray.getDimension(R.styleable.CircleChart_textSize, strokeWidth)
             backColor = typedArray.getColor(R.styleable.CircleChart_backColor, backColor)
-            progressColor = typedArray.getColor(R.styleable.CircleChart_progressColor, progressColor)
+            progressColor =
+                typedArray.getColor(R.styleable.CircleChart_progressColor, progressColor)
             textColor = typedArray.getColor(R.styleable.CircleChart_textColor, textColor)
 
             typedArray.recycle()
         }
-
+        paint.isAntiAlias = true
         paint.style = Paint.Style.STROKE
         paint.strokeWidth = strokeWidth
 
@@ -60,15 +57,15 @@ class CircleChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int, def
         textPaint.textAlign = Paint.Align.CENTER
         textPaint.color = textColor
 
-        fullRect.left = strokeWidth
-        fullRect.top = strokeWidth
+        circleRect.left = strokeWidth
+        circleRect.top = strokeWidth
     }
 
     override fun onSizeChanged(w: Int, h: Int, oldw: Int, oldh: Int) {
         super.onSizeChanged(w, h, oldw, oldh)
 
-        fullRect.bottom = h - strokeWidth
-        fullRect.right = w - strokeWidth
+        circleRect.bottom = h - strokeWidth
+        circleRect.right = w - strokeWidth
     }
 
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
@@ -81,13 +78,18 @@ class CircleChart(context: Context, attrs: AttributeSet?, defStyleAttr: Int, def
         super.onDraw(canvas)
 
         paint.color = backColor
-        canvas.drawArc(fullRect, 270f, 360f,false, paint)
+        canvas.drawArc(circleRect, 270f, 360f, false, paint)
 
         paint.color = progressColor
-        canvas.drawArc(fullRect, 270f, (progress * 360.0 / 100).toFloat(),false, paint)
+        canvas.drawArc(circleRect, 270f, (progress * 360.0 / 100).toFloat(), false, paint)
 
         val text = "$progress%"
         textPaint.getTextBounds(text, 0, text.length, textBound)
-        canvas.drawText(text, fullRect.centerX(), fullRect.centerY() - textBound.centerY(), textPaint)
+        canvas.drawText(
+            text,
+            circleRect.centerX(),
+            circleRect.centerY() - textBound.centerY(),
+            textPaint
+        )
     }
 }
