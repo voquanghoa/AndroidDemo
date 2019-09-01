@@ -9,6 +9,7 @@ import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
+import com.quanghoa.appdemo.customui.CompositeViewFragment
 import com.quanghoa.appdemo.customui.CustomUiFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.menu_app_main.*
@@ -16,6 +17,7 @@ import kotlinx.android.synthetic.main.menu_app_main.*
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
     private val customUiFragment = CustomUiFragment()
+    private val compositeViewFragment = CompositeViewFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,8 +48,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+
         when(p0.itemId){
             R.id.circle_chart -> showFragment(customUiFragment)
+            R.id.composite_view -> showFragment(compositeViewFragment)
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

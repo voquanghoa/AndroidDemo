@@ -3,6 +3,7 @@
     tools:context="com.nestle.brs1portable.activities.AppMainActivity">
 
     <group android:checkableBehavior="single" android:id="@+id/custom_ui">
-        <item android:id="@+id/circle_chart" android:title="@string/circle_chart" />
+        <item android:id="@+id/circle_chart" android:title="@string/custom_ui" />
+        <item android:id="@+id/composite_view" android:title="@string/composite_view" />
     </group>
 </menu>

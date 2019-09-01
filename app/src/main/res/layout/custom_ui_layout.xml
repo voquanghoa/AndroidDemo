@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -38,4 +39,16 @@
         app:layout_constraintBottom_toBottomOf="@+id/circleChart"
         app:layout_constraintStart_toEndOf="@+id/circleChart" />
 
+    <com.quanghoa.appdemo.customui.CircleChart
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        app:backColor="#AAD5D5"
+        app:layout_constraintStart_toStartOf="@+id/circleChart"
+        app:layout_constraintTop_toBottomOf="@+id/circleChart"
+        app:progress="36"
+        app:progressColor="#EC5151"
+        app:progressWidth="30"
+        app:textColor="#0B58B4"
+        app:textSize="70sp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

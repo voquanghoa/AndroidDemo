@@ -10,4 +10,7 @@
         <attr name="textColor" format="color" />
     </declare-styleable>
 
+    <declare-styleable name="RatingView">
+        <attr name="star" format="integer" />
+    </declare-styleable>
 </resources>
