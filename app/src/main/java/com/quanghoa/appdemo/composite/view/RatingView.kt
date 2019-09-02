@@ -10,23 +10,18 @@ import com.quanghoa.appdemo.R
 import kotlinx.android.synthetic.main.rating_view_layout.view.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 
-class RatingView(context: Context, attrs: AttributeSet?) : ConstraintLayout(context, attrs){
+class RatingView(context: Context, attrs: AttributeSet?)
+    : ConstraintLayout(context, attrs){
 
     private var ratingButtons: List<ImageButton>
 
-    var star: Int = 0
-        set(value){
-            if(value in 0..5){
-                field = value
-                ratingButtons.forEachIndexed{
-                    i, b -> b.isActivated = i < value
-                }
-            }
-        }
-
     init {
-        LayoutInflater.from(context).inflate(R.layout.rating_view_layout, this, true)
-        ratingButtons = container.children.map { it as ImageButton }.toList()
+        LayoutInflater.from(context)
+            .inflate(R.layout.rating_view_layout, this, true)
+
+        ratingButtons = container.children
+            .map { it as ImageButton }
+            .toList()
 
         ratingButtons.forEachIndexed{
                 i, b -> b.onClick { star = i + 1 }
@@ -38,4 +33,14 @@ class RatingView(context: Context, attrs: AttributeSet?) : ConstraintLayout(cont
             typedArray.recycle()
         }
     }
+
+    var star: Int = 0
+        set(value){
+            if(value in 0..5){
+                field = value
+                ratingButtons.forEachIndexed{
+                        i, b -> b.isActivated = i < value
+                }
+            }
+        }
 }

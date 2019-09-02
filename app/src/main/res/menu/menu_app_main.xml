@@ -5,5 +5,6 @@
     <group android:checkableBehavior="single" android:id="@+id/custom_ui">
         <item android:id="@+id/circle_chart" android:title="@string/custom_ui" />
         <item android:id="@+id/composite_view" android:title="@string/composite_view" />
+        <item android:id="@+id/glide_app" android:title="@string/glide_app" />
     </group>
 </menu>

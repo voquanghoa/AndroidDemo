@@ -1,4 +1,4 @@
-package com.quanghoa.appdemo.customui
+package com.quanghoa.appdemo.composite.view
 
 import android.os.Bundle
 import android.view.LayoutInflater
