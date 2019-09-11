@@ -1,0 +1,34 @@
+{
+  "planets": [
+    {
+      "name": "Thủy Tinh",
+      "radius": 2439,
+      "year": 88,
+      "image": "pictures/mercury.png"
+    },
+    {
+      "name": "Kim Tinh",
+      "radius": 6051,
+      "year": 224,
+      "image": "pictures/venus.png"
+    },
+    {
+      "name": "Trái Đất",
+      "radius": 6371,
+      "year": 365,
+      "image": "pictures/earth.png"
+    },
+    {
+      "name": "Hỏa Tinh",
+      "radius": 3396,
+      "year": 687,
+      "image": "pictures/mars.png"
+    },
+    {
+      "name": "Mộc Tinh",
+      "radius": 69911,
+      "year": 4333,
+      "image": "pictures/jupiter.png"
+    }
+  ]
+}

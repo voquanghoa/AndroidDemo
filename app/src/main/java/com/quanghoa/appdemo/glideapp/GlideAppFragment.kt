@@ -45,6 +45,7 @@ class GlideAppFragment : Fragment(){
     }
 
     private fun loadUrl(url: String){
+
         GlideApp.with(this)
             .load(url)
             .placeholder(R.drawable.loading)
