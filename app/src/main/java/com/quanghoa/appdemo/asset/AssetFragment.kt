@@ -24,7 +24,7 @@ class AssetFragment : Fragment(){
         return inflater.inflate(R.layout.asset_fragment_layout, container, false)
     }
 
-    fun readText(path: String): String{
+    private fun readText(path: String): String{
         return context!!.assets.open(path).use {
             String(it.readBytes())
         }

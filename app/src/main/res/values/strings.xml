@@ -8,4 +8,5 @@
     <string name="glide_app">Glide App</string>
     <string name="retrofit">Retrofit</string>
     <string name="asset_data">Asset data</string>
+    <string name="internal_data">Internal data</string>
 </resources>

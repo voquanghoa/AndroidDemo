@@ -1,7 +1,5 @@
 package com.quanghoa.appdemo.asset.adapters
 
-import android.content.res.AssetManager
-import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.View
@@ -33,7 +31,11 @@ class PlanetAdapter(private val planets: List<Planet>) : RecyclerView.Adapter<Pl
                 txt_name.text = field!!.name
                 txt_radius.text = field!!.radius.toString()
                 txt_year.text = field!!.year.toString()
-                img.imageBitmap = BitmapFactory.decodeStream(containerView.context.assets.open(field!!.image))
+
+                val imagePath = field!!.image
+                val context = containerView.context
+                val stream = context.assets.open(imagePath)
+                img.imageBitmap = BitmapFactory.decodeStream(stream)
             }
     }
 }
