@@ -12,6 +12,7 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.quanghoa.appdemo.asset.adapters.PlanetAdapter
 import com.quanghoa.appdemo.asset.models.Data
+import org.jetbrains.anko.support.v4.toast
 
 
 class AssetFragment : Fragment(){
@@ -21,6 +22,7 @@ class AssetFragment : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        toast(context!!.filesDir.absolutePath)
         return inflater.inflate(R.layout.asset_fragment_layout, container, false)
     }
 

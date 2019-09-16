@@ -15,6 +15,7 @@ import com.quanghoa.appdemo.customui.CustomUiFragment
 import com.quanghoa.appdemo.glideapp.GlideAppFragment
 import com.quanghoa.appdemo.internalstorage.InternalStorageFragment
 import com.quanghoa.appdemo.retrofit.RetrofitFragment
+import com.quanghoa.appdemo.sharedpreferences.SharedPreferencesFragment
 import kotlinx.android.synthetic.main.app_bar_main.*
 import kotlinx.android.synthetic.main.menu_app_main.*
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
     private val retrofitFragment = RetrofitFragment()
     private val assetFragment = AssetFragment()
     private val internalStorageFragment = InternalStorageFragment()
+    private val sharedPreferencesFragment = SharedPreferencesFragment()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,15 +57,16 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         fts.commit()
     }
 
-    override fun onNavigationItemSelected(p0: MenuItem): Boolean {
+    override fun onNavigationItemSelected(menuItem: MenuItem): Boolean {
 
-        when(p0.itemId){
+        when(menuItem.itemId){
             R.id.circle_chart -> showFragment(customUiFragment)
             R.id.composite_view -> showFragment(compositeViewFragment)
             R.id.glide_app -> showFragment(glideAppFragment)
             R.id.retrofit -> showFragment(retrofitFragment)
             R.id.asset -> showFragment(assetFragment)
             R.id.internal -> showFragment(internalStorageFragment)
+            R.id.shared_preferences -> showFragment(sharedPreferencesFragment)
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)

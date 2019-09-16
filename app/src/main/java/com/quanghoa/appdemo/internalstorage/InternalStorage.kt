@@ -16,7 +16,8 @@ object InternalStorage{
     }
 
     fun write(context: Context, path: String, content: String){
-        context.openFileOutput(path, Context.MODE_PRIVATE).write(content.toByteArray())
+        context.openFileOutput(path, Context.MODE_PRIVATE)
+            .write(content.toByteArray())
     }
 
     fun delete(context: Context, path: String){
