@@ -1,4 +1,4 @@
-package com.quanghoa.appdemo.internalstorage.models
+package com.quanghoa.appdemo.storage.internal.models
 
 import com.google.gson.annotations.SerializedName
 

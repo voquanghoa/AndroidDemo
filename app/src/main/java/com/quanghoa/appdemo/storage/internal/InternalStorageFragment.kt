@@ -1,4 +1,4 @@
-package com.quanghoa.appdemo.internalstorage
+package com.quanghoa.appdemo.storage.internal
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.quanghoa.appdemo.R
-import com.quanghoa.appdemo.internalstorage.models.MyContact
+import com.quanghoa.appdemo.storage.internal.models.MyContact
 import kotlinx.android.synthetic.main.internal_storage_fragment_layout.*
 import org.jetbrains.anko.sdk27.coroutines.onClick
 import org.jetbrains.anko.support.v4.toast

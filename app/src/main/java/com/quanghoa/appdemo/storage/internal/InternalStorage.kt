@@ -1,4 +1,4 @@
-package com.quanghoa.appdemo.internalstorage
+package com.quanghoa.appdemo.storage.internal
 
 import android.content.Context
 import java.io.FileNotFoundException

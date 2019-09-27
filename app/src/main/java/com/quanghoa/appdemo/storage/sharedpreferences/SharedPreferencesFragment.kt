@@ -1,4 +1,4 @@
-package com.quanghoa.appdemo.sharedpreferences
+package com.quanghoa.appdemo.storage.sharedpreferences
 
 import android.content.Context
 import android.content.SharedPreferences

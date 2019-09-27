@@ -10,4 +10,5 @@
     <string name="asset_data">Asset data</string>
     <string name="internal_data">Internal data</string>
     <string name="shared_preferences">Shared Preferences</string>
+    <string name="external_storage">External storage</string>
 </resources>
