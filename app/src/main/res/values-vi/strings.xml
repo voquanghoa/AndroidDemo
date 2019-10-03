@@ -11,15 +11,15 @@
     <string name="internal_data">Internal data</string>
     <string name="shared_preferences">Shared Preferences</string>
     <string name="external_storage">External storage</string>
-    <string name="bio">Bio</string>
-    <string name="note">Note</string>
-    <string name="i_m_above_18_year_old">I\'m above 18 year old</string>
-    <string name="username">Username</string>
-    <string name="name">Name</string>
-    <string name="password">Password</string>
+    <string name="bio">Tiểu sử</string>
+    <string name="note">Ghi chú</string>
+    <string name="i_m_above_18_year_old">Tôi đã trên 18 tuổi</string>
+    <string name="username">Tài khoản</string>
+    <string name="name">Họ tên</string>
+    <string name="password">Mật khẩu</string>
     <string name="email">Email</string>
-    <string name="birthday">Birthday</string>
-    <string name="english">English</string>
-    <string name="vietnamese">Vietnamese</string>
+    <string name="birthday">Ngày sinh</string>
+    <string name="english">Tiếng Anh</string>
+    <string name="vietnamese">Tiếng Việt</string>
     <string name="multi_languages">Multi languages</string>
 </resources>
